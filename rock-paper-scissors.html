@@ -1,9 +1,17 @@
 <DOCTYPE! html>
     <html>
         <title>Rock Paper Scissors</title>
+        <meta charset="UTF-8"/>
         <body>
             <script>
-                
+                const choices = [
+                    'Rock',
+                    'Paper',
+                    'Scissors'
+                ];
+                function computerPlay() {
+                    return choices[Math.floor(Math.random()*choices.length)];
+                }
             </script>
         </body>
     </html>

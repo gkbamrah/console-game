@@ -5,12 +5,20 @@
         <body>
             <script>
                 const choices = [
-                    'Rock',
-                    'Paper',
-                    'Scissors'
+                    'rock',
+                    'paper',
+                    'scissors'
                 ];
                 function computerPlay() {
                     return choices[Math.floor(Math.random()*choices.length)];
+                }
+
+                function playRound(playerSelection, computerSelection) {
+                    const lowerCasePlayerSelection = playerSelection.toLowerCase();
+                    switch (lowerCasePlayerSelection) {
+                        case 'rock':
+                            if
+                    }
                 }
             </script>
         </body>

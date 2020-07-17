@@ -17,7 +17,15 @@
                     const lowerCasePlayerSelection = playerSelection.toLowerCase();
                     switch (lowerCasePlayerSelection) {
                         case 'rock':
-                            if
+                            if (computerSelection === 'scissors') {
+                                return "You win! Rock beats paper";
+                            } else if(computerSelection === 'paper') {
+                                return "You lose! Paper beats rock"
+                            } else {
+                                return "It's a tie! You both chose " + lowerCasePlayerSelection;
+                            }
+                        break;
+                               
                     }
                 }
             </script>

@@ -18,16 +18,39 @@
                     switch (lowerCasePlayerSelection) {
                         case 'rock':
                             if (computerSelection === 'scissors') {
-                                return "You win! Rock beats paper";
+                                return "You win! Rock beats scissors";
                             } else if(computerSelection === 'paper') {
                                 return "You lose! Paper beats rock"
                             } else {
                                 return "It's a tie! You both chose " + lowerCasePlayerSelection;
                             }
                         break;
-                               
-                    }
+                        case 'paper':
+                            if (computerSelection === 'scissors') {
+                                return "You lose! Scissors beats paper";
+                            } else if(computerSelection === 'rock') {
+                                return "You win! Paper beats rock"
+                            } else {
+                                return "It's a tie! You both chose " + lowerCasePlayerSelection;
+                            }
+                        break;
+                        case 'scissors':
+                            if (computerSelection === 'rock') {
+                                return "You lose! Rock beats scissors";
+                            } else if(computerSelection === 'paper') {
+                                return "You win! Scissors beats paper"
+                            } else {
+                                return "It's a tie! You both chose " + lowerCasePlayerSelection;
+                            }
+                        break;
+                        default:
+                            return "Invalid input"
+                    }   
                 }
+
+                const playerSelection = 'rock';
+                const computerSelection = computerPlay();
+                console.log(playRound(playerSelection, computerSelection));
             </script>
         </body>
     </html>

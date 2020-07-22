@@ -8,6 +8,9 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    if(playerSelection == null) {
+        
+    }
     const lowerCasePlayerSelection = playerSelection.toLowerCase();
     switch (lowerCasePlayerSelection) {
         case 'rock':
@@ -38,7 +41,7 @@ function playRound(playerSelection, computerSelection) {
             }
         break;
         default:
-            return "Invalid input"
+            return "Invalid input. Computer wins by default"
     }   
 }
 
@@ -46,7 +49,11 @@ function game() {
     let response = "";
     let computerChoice = "";
     for(i = 0; i < 5; i++) {
-       response = prompt("Make your move! [rock][paper][scissors]"); 
+       response = prompt("Make your move! [rock] [paper] [scissors]"); 
+       if(response == null) {
+           console.log("Game cancelled");
+           return;
+       }
        console.log("You chose " + response + "...");
         computerChoice = computerPlay();
         console.log("The computer chose " + computerChoice + "...");

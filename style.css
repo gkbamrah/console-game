@@ -1,6 +1,6 @@
 .button {
     text-align: center;
-    
+    margin-left: 40px;
     margin-top: 10%;
 }
 .text {
@@ -12,16 +12,18 @@
 #rock {
     width: 10%;
     height: auto;
-    padding-right: 150px;
+    
 }
 
 #paper {
     width: 10%;
     height: auto;
+    margin-left: 70px;
 }
 
 #scissors {
     width: 15%;
     height: auto;
-    padding-left: 70px;
+    margin-left: 40px;
+
 }

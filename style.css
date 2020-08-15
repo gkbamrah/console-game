@@ -1,7 +1,22 @@
 .button {
+    text-align: center;
+    position: relative;
     
 }
 
 #rock {
-    
+    width: 10%;
+    height: auto;
+    padding-right: 140px;
+}
+
+#paper {
+    width: 10%;
+    height: auto;
+}
+
+#scissors {
+    width: 15%;
+    height: auto;
+    padding-left: 100px;
 }

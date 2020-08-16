@@ -6,42 +6,74 @@ const choices = [
 
 let cScore = 0; //computer score
 let pScore = 0; //player score
+let winColor = 'green';
+let loseColor = 'red';
+let tieColor = 'black';
+
 function computerPlay() {
     return choices[Math.floor(Math.random()*choices.length)];
 }
+function changeScore(computerScore, playerScore) {
+    const score = document.querySelector("h2");
+    score.textContent = "Computer: " + computerScore + " - Player: " + playerScore;
+}
+function tieResult(playerChoice) {
+    changeH3Text("It's a tie! You both chose " + playerChoice, tieColor);
+}
+function changeH3Text(text, color) {
+    const result = document.querySelector("h3");
+    result.textContent = text;
+    result.style.color = color;
+}
+
+function changeH4Text(computerChoice) {
+    const result = document.querySelector("h4");
+    result.textContent = "Computer chose " + computerChoice;
+}
 
 function playRound(playerSelection, computerSelection) {
-    //if(playerSelection == null) {
-        
-    //}
     const lowerCasePlayerSelection = playerSelection.toLowerCase();
     switch (lowerCasePlayerSelection) {
         case 'rock':
             if (computerSelection === 'scissors') {
-                document.querySelector(h3).textContent = "You win! Rock beats scissors";
-                console.log("You win! Rock beats scissors");
+                changeH4Text(computerSelection);
+                changeH3Text("You win! Rock beats scissors", winColor);
+                changeScore(cScore, ++pScore);
             } else if(computerSelection === 'paper') {
-                console.log("You lose! Paper beats rock");
+                changeH4Text(computerSelection);
+                changeH3Text("You lose! Paper beats rock", loseColor);
+                changeScore(++cScore, pScore);
             } else {
-                console.log("It's a tie! You both chose " + lowerCasePlayerSelection);
+                changeH4Text(computerSelection);
+                tieResult(lowerCasePlayerSelection);
             }
         break;
         case 'paper':
             if (computerSelection === 'scissors') {
-                console.log("You lose! Scissors beats paper");
+                changeH4Text(computerSelection);
+                changeH3Text("You lose! Scissors beats paper", loseColor);
+                changeScore(++cScore, pScore);
             } else if(computerSelection === 'rock') {
-                console.log("You win! Paper beats rock");
+                changeH4Text(computerSelection);
+                changeH3Text("You win! Paper beats rock", winColor);
+                changeScore(cScore, ++pScore);
             } else {
-                return "It's a tie! You both chose " + lowerCasePlayerSelection;
+                changeH4Text(computerSelection);
+                tieResult(lowerCasePlayerSelection);
             }
         break;
         case 'scissors':
             if (computerSelection === 'rock') {
-                return "You lose! Rock beats scissors";
+                changeH4Text(computerSelection);
+                changeH3Text("You lose! Rock beats scissors", loseColor);
+                changeScore(++cScore, pScore);
             } else if(computerSelection === 'paper') {
-                return "You win! Scissors beats paper"
+                changeH4Text(computerSelection);
+                changeH3Text("You win! Scissors beats paper", winColor);
+                changeScore(cScore, ++pScore);
             } else {
-                return "It's a tie! You both chose " + lowerCasePlayerSelection;
+                changeH4Text(computerSelection);
+                tieResult(lowerCasePlayerSelection);
             }
         break;
         default:

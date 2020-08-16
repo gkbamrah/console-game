@@ -34,7 +34,16 @@ h3 {
     text-align: center;
     font-family: "Alatsi";
     color: black;
-    margin: 250px;
+    margin: 10px;
+    position: relative;
+}
+
+h4{
+    text-align: center;
+    font-family: "Alatsi";
+    color: black;
+    margin-top: 250px;
+    color: purple;
 }
 #rock {
     width: 10%;

@@ -1,7 +1,8 @@
 .choice {
-    text-align: center;
+    text-align: center; 
     transform: translateX(-5%);
-    margin-top: 10%;
+    /*margin-top: 10%;  */
+    
 }
 #rock:hover, #paper:hover {
     width: 11%;
@@ -12,13 +13,21 @@
     width: 16%;
     height: auto;
 }
-.text {
+h1 {
     text-align: center;
     font-family: "Alatsi";
     padding-top: 90px;
     color: blue;
     font-size: 45px;
     transform: translateY(70%);
+}
+
+h2 {
+    text-align: center;
+    font-family: "Alatsi";
+    color: blue;
+    position: relative;
+    margin-top: 125px;
 }
 #rock {
     width: 10%;

@@ -3,6 +3,9 @@ const choices = [
     'paper',
     'scissors'
 ];
+
+let cScore = 0; //computer score
+let pScore = 0; //player score
 function computerPlay() {
     return choices[Math.floor(Math.random()*choices.length)];
 }
@@ -15,6 +18,7 @@ function playRound(playerSelection, computerSelection) {
     switch (lowerCasePlayerSelection) {
         case 'rock':
             if (computerSelection === 'scissors') {
+                document.querySelector(h3).textContent = "You win! Rock beats scissors";
                 console.log("You win! Rock beats scissors");
             } else if(computerSelection === 'paper') {
                 console.log("You lose! Paper beats rock");

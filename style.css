@@ -29,6 +29,13 @@ h2 {
     position: relative;
     margin-top: 125px;
 }
+
+h3 {
+    text-align: center;
+    font-family: "Alatsi";
+    color: black;
+    margin: 250px;
+}
 #rock {
     width: 10%;
     height: auto;

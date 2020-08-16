@@ -17,6 +17,8 @@
     font-family: "Alatsi";
     padding-top: 90px;
     color: blue;
+    font-size: 45px;
+    transform: translateY(70%);
 }
 #rock {
     width: 10%;

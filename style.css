@@ -1,7 +1,16 @@
-.button {
+.choice {
     text-align: center;
     margin-left: 40px;
     margin-top: 10%;
+}
+#rock:hover, #paper:hover {
+    width: 11%;
+    height: auto;
+}
+
+#scissors:hover {
+    width: 16%;
+    height: auto;
 }
 .text {
     text-align: center;

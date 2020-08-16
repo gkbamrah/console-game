@@ -1,6 +1,6 @@
 .choice {
     text-align: center;
-    margin-left: 40px;
+    transform: translateX(-5%);
     margin-top: 10%;
 }
 #rock:hover, #paper:hover {
@@ -21,18 +21,20 @@
 #rock {
     width: 10%;
     height: auto;
-    
+    position: absolute;
+    transform: translate(-150%, 30%);
 }
 
 #paper {
     width: 10%;
     height: auto;
-    margin-left: 70px;
+    margin-right: 550px;
+    position: absolute;
 }
 
 #scissors {
     width: 15%;
     height: auto;
-    margin-left: 40px;
-
+    transform: translate(100%, 60%);
+    position: absolute;
 }

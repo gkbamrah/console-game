@@ -1,7 +1,7 @@
 .choice {
     text-align: center; 
-    transform: translateX(-5%);
-    /*margin-top: 10%;  */
+    margin-right: 200px;
+
     
 }
 #rock:hover, #paper:hover {
@@ -57,7 +57,7 @@ h4{
 #paper {
     width: 200px;
     height: auto;
-    margin-right: 550px;
+    margin-right: 525px;
     position: absolute;
 }
 

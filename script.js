@@ -10,12 +10,28 @@ let winColor = 'green';
 let loseColor = 'red';
 let tieColor = 'black';
 
+const buttons = document.querySelectorAll('input');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', () => {
+      playRound(button.id, computerPlay());
+    });
+  });
+
+function disableButtons() {
+    buttons.forEach((button) => {
+        button.disabled = true;
+    })
+}
 function computerPlay() {
     return choices[Math.floor(Math.random()*choices.length)];
 }
 function changeScore(computerScore, playerScore) {
     const score = document.querySelector("h2");
-    score.textContent = "Computer: " + computerScore + " - Player: " + playerScore;
+    score.textContent = "Computer: " + computerScore + " - You: " + playerScore;
 }
 function tieResult(playerChoice) {
     changeH3Text("It's a tie! You both chose " + playerChoice, tieColor);
@@ -31,80 +47,68 @@ function changeH4Text(computerChoice) {
     result.textContent = "Computer chose " + computerChoice;
 }
 
+
+
+function checkGameOver() {
+    if(pScore == 5) {
+            const titleText = document.querySelector("h1");
+            titleText.textContent = "Game over! You win!";
+            disableButtons();
+        }   
+    if(cScore == 5) {
+        const titleText = document.querySelector("h1");
+        titleText.textContent = "Game over! Computer wins!";
+        disableButtons();
+    }
+}
+
+function noTieProc(roundResult, resultTextColor, compScore, playScore) {
+
+    changeH3Text(roundResult, resultTextColor);
+    changeScore(compScore, playScore);
+    checkGameOver();
+}
+
 function playRound(playerSelection, computerSelection) {
+    changeH4Text(computerSelection);
     const lowerCasePlayerSelection = playerSelection.toLowerCase();
     switch (lowerCasePlayerSelection) {
         case 'rock':
             if (computerSelection === 'scissors') {
-                changeH4Text(computerSelection);
-                changeH3Text("You win! Rock beats scissors", winColor);
-                changeScore(cScore, ++pScore);
+                noTieProc("You win! Rock beats scissors", winColor, cScore, ++pScore);
             } else if(computerSelection === 'paper') {
-                changeH4Text(computerSelection);
-                changeH3Text("You lose! Paper beats rock", loseColor);
-                changeScore(++cScore, pScore);
+                noTieProc("You lose! Paper beats rock", loseColor, ++cScore, pScore);
             } else {
-                changeH4Text(computerSelection);
                 tieResult(lowerCasePlayerSelection);
             }
         break;
         case 'paper':
             if (computerSelection === 'scissors') {
-                changeH4Text(computerSelection);
-                changeH3Text("You lose! Scissors beats paper", loseColor);
-                changeScore(++cScore, pScore);
+                noTieProc("You lose! Scissors beats paper", loseColor, ++cScore, pScore);
+                
             } else if(computerSelection === 'rock') {
-                changeH4Text(computerSelection);
-                changeH3Text("You win! Paper beats rock", winColor);
-                changeScore(cScore, ++pScore);
+                noTieProc("You win! Paper beats rock", winColor, cScore, ++pScore);
+
             } else {
-                changeH4Text(computerSelection);
+  
                 tieResult(lowerCasePlayerSelection);
             }
         break;
         case 'scissors':
             if (computerSelection === 'rock') {
-                changeH4Text(computerSelection);
-                changeH3Text("You lose! Rock beats scissors", loseColor);
-                changeScore(++cScore, pScore);
+                noTieProc("You lose! Rock beats scissors", loseColor, ++cScore, pScore);
+
             } else if(computerSelection === 'paper') {
-                changeH4Text(computerSelection);
-                changeH3Text("You win! Scissors beats paper", winColor);
-                changeScore(cScore, ++pScore);
+                noTieProc("You win! Scissors beats paper", winColor, cScore, ++pScore);
+
             } else {
-                changeH4Text(computerSelection);
+     
                 tieResult(lowerCasePlayerSelection);
             }
         break;
         default:
             return "Invalid input. Computer wins by default"
+
     }   
 }
 
-
-const buttons = document.querySelectorAll('input');
-
-// we use the .forEach method to iterate through each button
-buttons.forEach((button) => {
-
-    // and for each one we add a 'click' listener
-    button.addEventListener('click', () => {
-      playRound(button.id, computerPlay());
-    });
-  });
-//
-// function game() {
-//     let response = "";
-//     let computerChoice = "";
-//     for(i = 0; i < 5; i++) {
-//        response = prompt("Make your move! [rock] [paper] [scissors]"); 
-//        if(response == null) {
-//            console.log("Game cancelled");
-//            return;
-//        }
-//        console.log("You chose " + response + "...");
-//         computerChoice = computerPlay();
-//         console.log("The computer chose " + computerChoice + "...");
-//         console.log(playRound(response, computerChoice));
-//     }
-// }

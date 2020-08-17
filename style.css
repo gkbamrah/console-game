@@ -5,12 +5,12 @@
     
 }
 #rock:hover, #paper:hover {
-    width: 11%;
+    width: 210px;
     height: auto;
 }
 
 #scissors:hover {
-    width: 16%;
+    width: 310px;
     height: auto;
 }
 h1 {
@@ -42,25 +42,28 @@ h4{
     text-align: center;
     font-family: "Alatsi";
     color: black;
-    margin-top: 300px;
+    margin-top: 320px;
     color: purple;
+    position: relative;
 }
 #rock {
-    width: 10%;
+    width: 200px;
+    
     height: auto;
     position: absolute;
     transform: translate(-150%, 30%);
 }
 
 #paper {
-    width: 10%;
+    width: 200px;
     height: auto;
     margin-right: 550px;
     position: absolute;
 }
 
 #scissors {
-    width: 15%;
+    width: 300px;
+    
     height: auto;
     transform: translate(100%, 60%);
     position: absolute;

@@ -1,8 +1,14 @@
+//sound effects taken from Zapsplat.com
+
 const choices = [
     'rock',
     'paper',
     'scissors'
 ];
+
+let rockSound = new Audio("sounds/impact_rock_large_rockpool_dry_002.mp3");
+let paperSound = new Audio("sounds/zapsplat_foley_paper_sheet_a4_slam_down_by_hand_on_glass_table_002_28577.mp3");
+let scissorsSound = new Audio("sounds/zapsplat_office_scissors_cut_air_x1_12283.mp3");
 
 let cScore = 0; //computer score
 let pScore = 0; //player score
@@ -17,6 +23,15 @@ buttons.forEach((button) => {
 
     // and for each one we add a 'click' listener
     button.addEventListener('click', () => {
+        if(button.id == 'rock') {
+            
+            rockSound.play();
+        } else if(button.id == 'paper') {
+            
+            paperSound.play();
+        } else {
+            scissorsSound.play();
+        }
       playRound(button.id, computerPlay());
     });
   });

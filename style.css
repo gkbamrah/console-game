@@ -1,8 +1,10 @@
-.choice {
+.main {
     text-align: center; 
-    margin-right: 200px;
+    translate: ;
+}
 
-    
+.buttons {
+    transform: translateX(-5%);
 }
 #rock:hover, #paper:hover {
     width: 210px;
@@ -15,11 +17,12 @@
 }
 h1 {
     text-align: center;
+    
     font-family: "Alatsi";
     padding-top: 90px;
     color: blue;
     font-size: 45px;
-    transform: translateY(70%);
+
 }
 
 h2 {
@@ -27,7 +30,7 @@ h2 {
     font-family: "Alatsi";
     color: blue;
     position: relative;
-    margin-top: 125px;
+    
 }
 
 h3 {
@@ -40,6 +43,7 @@ h3 {
 
 h4{
     text-align: center;
+
     font-family: "Alatsi";
     font-size: 20px;
     color: black;
@@ -66,6 +70,6 @@ h4{
     width: 300px;
     
     height: auto;
-    transform: translate(100%, 60%);
+    transform: translate(90%, 60%);
     position: absolute;
 }
